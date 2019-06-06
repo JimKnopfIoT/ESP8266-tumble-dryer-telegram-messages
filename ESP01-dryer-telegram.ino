@@ -13,22 +13,6 @@ int x=32;
 #include <Adafruit_ADS1015.h>
 #include <credentials.h> // we store all static credentials in libraries/credentials/credentials.h
 
-uint64_t sleepTimeS =  11400000000; // wait 3 hours (in µSeconds)
-uint64_t sleepTime = 300000000; // wait 5 minutes (in µSeconds)
-  
-Adafruit_ADS1115 ads(0x48);
-float V0 = 0.0;
-float V1 = 0.0;
-
-extern "C"
-{ 
-    #include "user_interface.h" 
-}
-
-#define inputPin 3 /* RX Pin on ESP-01 can set to LOW, > 3,3K (4,7k) resistor needed to pull down voltage after 
-read HIGH state. !Don't use Serial output while using Pin 3 (RX) as Input with LOW state needed because
-using Serialoutput will set RX Pin to HIGH! */
-
 // Telegram Settings
 // First create a bot with telegram's botfather and write down the bot settings. 
 // Findout your own telegramID (this is the adminID to communicate with the bot).
@@ -50,8 +34,21 @@ static char ssid[] = "<your-SSID";
 static char password[] = "your-password";
 */
 static char hostname[] = "<your-hostname-for-ESP";
+uint64_t sleepTimeS =  11400000000; // wait 3 hours (in µSeconds)
+uint64_t sleepTime = 300000000; // wait 5 minutes (in µSeconds)
+  
+Adafruit_ADS1115 ads(0x48);
+float V0 = 0.0;
+float V1 = 0.0;
 
+extern "C"
+{ 
+    #include "user_interface.h" 
+}
 
+#define inputPin 3 /* RX Pin on ESP-01 can set to LOW, > 3,3K (4,7k) resistor needed to pull down voltage after 
+read HIGH state. !Don't use Serial output while using Pin 3 (RX) as Input with LOW state needed because
+using Serialoutput will set RX Pin to HIGH! */
 
 // ---------------------------------------------------------------------------------------------------------------
 
