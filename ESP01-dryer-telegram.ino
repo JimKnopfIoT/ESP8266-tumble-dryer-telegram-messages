@@ -11,6 +11,7 @@
 #define I2CAddressESPWifi 8
 int x=32;
 #include <Adafruit_ADS1015.h>
+#include <credentials.h> // we store all static credentials in libraries/credentials/credentials.h
 
 uint64_t sleepTimeS =  11400000000; // wait 3 hours (in µSeconds)
 uint64_t sleepTime = 300000000; // wait 5 minutes (in µSeconds)
@@ -33,16 +34,22 @@ using Serialoutput will set RX Pin to HIGH! */
 // Findout your own telegramID (this is the adminID to communicate with the bot).
 // If you create a channel, findout the channelID (chatID).
 
+/*
+// all static credentials are stored in libraries/credentials/credentials.h
 #define botName "<botName>"  // for Bot use
 #define botUserName "<botUserName>" // for Bot use
 #define botToken "<like 123456789:AABBccDDeeFfgGHHiIjjKklLMmnNooPPqQrR" // for Bot use
 //#define adminID "like 12345678" // your ID, use this ID if you want do talk directly to the bot
 #define chatID "like -123456789" // channelID, use this if you want to talk to the bot via channel, (leading "-" needed)
+*/
 
-// Wifi settings 
+/*
+// Wifi settings
+// all static credentials are stored in libraries/credentials/credentials.h
 static char ssid[] = "<your-SSID";
 static char password[] = "your-password";
-static char hostname[] = "<your-hostname-for-ESP-01";
+*/
+static char hostname[] = "<your-hostname-for-ESP";
 
 
 
